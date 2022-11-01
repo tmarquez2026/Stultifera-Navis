@@ -1,0 +1,129 @@
+<!Doctype html>
+<head>
+    <style>
+      #bgVideo {
+        min-width: 100%;
+        min-height: 100%;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+      }
+      .content {
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #c58e9b;
+        width: 100%;
+        padding: 20px;
+        margin-left: -8px;
+    }
+      #myBtn:hover {
+        background: #ddd;
+        color: black;
+        }
+      #myBtn {
+        text-align: center;
+        font-size: 40px;
+        margin-right: 800px;
+        width: 100px;
+        margin-bottom: 14px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        float: right;
+        }
+      #MuteButton::before {
+          content:  '🔇';
+      }
+      
+      #MuteButton.muted::before {
+          content:  '🔈';
+      }
+      
+      #MuteButton {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0,0,0,.5);
+        border: none;
+        color: #fff;
+        z-index: 5;
+        font-size: 2rem;
+        border-radius: 2rem;
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+        text-align: center;
+      }
+      .arrow:hover {
+        background: #c58e9b;
+        color: black;
+        }
+      .arrow {
+        margin-left: 320px;
+        border: solid #c58e9b;
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 3px;
+      }
+      .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: #c58e9b;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover, .next:hover {
+        background: #c58e9b;
+        color: black;
+        }
+
+    </style>  
+</head>
+<body>
+    <video id="bgVideo" autoplay loop muted>
+        <source src="Irene_Ost.mp4" type="video/mp4">
+      </video>
+      <a id="MuteButton" class="muted" onclick="toggleMute();">
+      </a>
+      <a href="PreIrene.html"><div class="next">></div></a>
+      <a href="PreSpalter.html"><div class="prev"><</div></a>
+    <div class="content">
+        <div class="title">
+          <a href="Irene.html"><div id="myBtn">
+          </div></a>
+          <h1>Irene<img src="https://static.wikia.nocookie.net/mrfz/images/7/74/Guard.png/revision/latest/scale-to-width-down/70?cb=20210821062342" style="width:2%">
+          <img src="https://static.wikia.nocookie.net/mrfz/images/d/d0/Swordmaster_Guard.png/revision/latest/scale-to-width-down/55?cb=20210803091645" style="width:2%">
+          <img src="https://static.wikia.nocookie.net/mrfz/images/c/c9/Iberia.png/revision/latest/scale-to-width-down/90?cb=20210421014427" style="width: 2%"></h1>
+          </div>
+        <p style="color:#c58e9b">Inquisitor Messenger Irene is fighting to protect the coasts of Iberia<a href="Spalter.html>"><i class="arrow down"></i></p></a>
+      </div>
+<script>
+    function toggleMute() {
+        var button=document.getElementById("MuteButton")
+        var video=document.getElementById("bgVideo")
+        
+        if(video.muted){
+          video.muted = false;
+        } else {
+          video.muted = true;
+        }
+        button.classList.toggle('muted');
+      }
+</script>
+</body>
